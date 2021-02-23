@@ -8,22 +8,22 @@ pipeline{
   stages {
     stage('Maven-Clean'){
       steps{
-        sh 'mvn clean'
+        bat 'mvn clean'
       }
     }
     stage('Maven-Compile'){
       steps{
-        sh 'mvn compile'
+        bat 'mvn compile'
       }
     }
     stage('Maven_Test'){
       steps{
-        sh 'mvn test'
+        bat 'mvn test'
       }
     }
     stage('Maven-Package'){
       steps{
-        sh 'mvn package'
+        bat 'mvn package'
       }
     }
    stage('quality check status')
@@ -32,10 +32,10 @@ pipeline{
         script{
           withSonarQubeEvn("sonarserver")
           {
-            sh "mvn sonar:sonar"
+            bat "mvn sonar:sonar"
           }
         }
-        sh 'mvn clean install'
+        bat 'mvn clean install'
       }
     }
     stage('collect artifact'){
