@@ -8,10 +8,19 @@ public class simplecal {
 	int a=10,b=20;
 	int sum;
 	int difference;
-	sum = a+b;
-	difference = a-b;
-	System.out.println("the sum is "+sum);
-	System.out.println("the difference is:"+difference);
-}
+	
+	}
+	
+
+	public static long add(int a, int b) {
+	int sum = a+b;
+		return sum;
+	}
+
+
+	public static long subtract(int a, int b) {
+		int difference = a-b;
+		return difference;
+	}
 }
 
