@@ -30,7 +30,7 @@ pipeline{
     {
       steps{
         script{
-          withSonarQubeEvn("sonarserver")
+          withSonarQubeEnv("sonarserver")
           {
             bat "mvn sonar:sonar"
           }
